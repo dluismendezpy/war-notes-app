@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ScrollView, StyleSheet, Text, View, Alert } from "react-native";
-import { useHeaderHeight } from "@react-navigation/stack";
+import { useHeaderHeight } from "@react-navigation/elements";
 import colors from "../misc/colors";
 import RoundIconBtn from "./RoundIconBtn";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -91,8 +91,8 @@ const NoteDetail = (props) => {
       >
         <Text style={styles.time}>
           {note.isUpdated
-            ? `Updated At ${formatDate(note.time)}`
-            : `Created At ${formatDate(note.time)}`}
+            ? `Ultima actualizacion: ${formatDate(note.time)}`
+            : `Creado el ${formatDate(note.time)}`}
         </Text>
         <Text style={styles.title}>{note.title}</Text>
         <Text style={styles.desc}>{note.desc}</Text>

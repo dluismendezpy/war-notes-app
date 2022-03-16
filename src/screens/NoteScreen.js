@@ -133,8 +133,9 @@ const NoteScreen = ({ user, navigation }) => {
 
 const styles = StyleSheet.create({
   header: {
-    fontSize: 25,
-    fontWeight: "bold",
+    fontSize: 15,
+    fontWeight: "normal",
+    marginTop: 10,
   },
   container: {
     paddingHorizontal: 20,

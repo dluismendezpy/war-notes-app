@@ -56,29 +56,32 @@ const NoteInputModal = ({ visible, onClose, onSubmit, note, isEdit }) => {
     <>
       <StatusBar hidden />
       <Modal visible={visible} animationType="fade">
+        <View>
+          <Text style={styles.textPrincipal}>INTRODUCIR DATOS</Text>
+        </View>
         <View style={styles.container}>
           <TextInput
             value={title}
             onChangeText={(text) => handleOnChangeText(text, "title")}
-            placeholder="Title"
+            placeholder="Titulo"
             style={[styles.input, styles.title]}
           />
           <TextInput
             value={desc}
             multiline
-            placeholder="Note"
+            placeholder="Notas de la accion"
             style={[styles.input, styles.desc]}
             onChangeText={(text) => handleOnChangeText(text, "desc")}
           />
           <View style={styles.btnContainer}>
             <RoundIconBtn
-              size={15}
-              antIconName="check"
+              size={25}
+              antIconName="arrowright"
               onPress={handleSubmit}
             />
             {title.trim() || desc.trim() ? (
               <RoundIconBtn
-                size={15}
+                size={25}
                 style={{ marginLeft: 15 }}
                 antIconName="close"
                 onPress={closeModal}
@@ -95,23 +98,28 @@ const NoteInputModal = ({ visible, onClose, onSubmit, note, isEdit }) => {
 };
 
 const styles = StyleSheet.create({
+  textPrincipal: {
+    textAlign: "center",
+    fontSize: 30,
+    fontWeight: "bold",
+    marginTop: 10,
+  },
   container: {
     paddingHorizontal: 20,
-    paddingTop: 15,
+    paddingTop: 65,
   },
   input: {
     borderBottomWidth: 2,
-    borderBottomColor: colors.PRIMARY,
+    borderBottomColor: colors.DARK,
     fontSize: 20,
     color: colors.DARK,
   },
   title: {
     height: 40,
-    marginBottom: 15,
-    fontWeight: "bold",
+    marginBottom: 25,
   },
   desc: {
-    height: 100,
+    height: 70,
   },
   modalBG: {
     flex: 1,
@@ -119,7 +127,7 @@ const styles = StyleSheet.create({
   },
   btnContainer: {
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "flex-end",
     paddingVertical: 15,
   },
 });
